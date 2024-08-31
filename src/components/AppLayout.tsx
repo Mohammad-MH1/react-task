@@ -1,10 +1,14 @@
-function AppLayout() {
+import { ReactNode } from 'react';
+
+type AppLayoutProps = {
+  children: ReactNode;
+};
+
+function AppLayout({ children }: AppLayoutProps) {
   return (
-    <main className='flex h-dvh items-center justify-center'>
-      <div className='h-5/6 w-5/6 rounded bg-white/[.25] shadow-2xl backdrop-blur-lg'>
-        سلام
-      </div>
-    </main>
+    <>
+      <div className='h-dvh px-3 py-5 md:py-12'>{children}</div>
+    </>
   );
 }
 
