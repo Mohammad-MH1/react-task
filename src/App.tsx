@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import TextCard from './components/TextCard';
 
-const EXCHANGE = 595000;
+const EXCHANGE = 600000;
 
 function App() {
   const [selected, setSelected] = useState('dollar');
