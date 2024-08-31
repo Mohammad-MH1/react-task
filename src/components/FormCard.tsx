@@ -1,5 +1,6 @@
 import { FormEvent, useState } from 'react';
 
+import { checkPriceInput } from '../utils/helpers';
 import Button from './Button';
 
 type FormCardProps = {
@@ -10,16 +11,17 @@ const EXCHANGE = 600000;
 
 function FormCard({ onFinalValue }: FormCardProps) {
   const [selected, setSelected] = useState('dollar');
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState('');
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (value <= 0) return;
+    const inputValue = value.replace(',', '.');
+    if (!checkPriceInput(inputValue)) return;
 
-    if (selected === 'dollar') onFinalValue(value * EXCHANGE);
-    if (selected === 'rial') onFinalValue(value / EXCHANGE);
+    if (selected === 'dollar') onFinalValue(Number(inputValue) * EXCHANGE);
+    if (selected === 'rial') onFinalValue(Number(inputValue) / EXCHANGE);
 
-    setValue(0);
+    setValue('');
   }
 
   return (
@@ -44,11 +46,11 @@ function FormCard({ onFinalValue }: FormCardProps) {
       <div className='flex flex-col items-center justify-between gap-1 sm:flex-row sm:justify-center sm:gap-3 md:justify-around lg:justify-between'>
         <label htmlFor='number'>مقدار مورد نظر را وارد کنید.</label>
         <input
-          type='number'
+          type='text'
           id='number'
           className='input sm:w-32 lg:w-64 lg:text-lg'
           value={value}
-          onChange={e => setValue(Number(e.target.value))}
+          onChange={e => setValue(e.target.value)}
         />
       </div>
       <div className='flex justify-center gap-5'>
