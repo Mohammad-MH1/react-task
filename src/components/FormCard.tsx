@@ -26,10 +26,10 @@ function FormCard({ onFinalValue }: FormCardProps) {
 
   return (
     <form
-      className='flex flex-col gap-3 py-2 sm:p-10 sm:text-lg md:gap-6 md:pl-16 md:pr-8 md:text-xl lg:gap-8 lg:p-3 lg:text-2xl'
+      className='vsm:p-10 flex flex-col gap-3 py-2 sm:text-lg md:gap-6 md:pl-16 md:pr-8 md:text-xl lg:gap-8 lg:p-3 lg:text-2xl'
       onSubmit={handleSubmit}
     >
-      <div className='flex flex-col items-center justify-center gap-4 sm:flex-row sm:justify-between'>
+      <div className='vsm:flex-row vsm:justify-between flex flex-col items-center justify-center gap-4 sm:justify-between'>
         <label htmlFor='currency' className=''>
           واحد پول مورد نظر را انتخاب کنید.
         </label>
@@ -43,7 +43,7 @@ function FormCard({ onFinalValue }: FormCardProps) {
           <option value='rial'>ریال</option>
         </select>
       </div>
-      <div className='flex flex-col items-center justify-between gap-1 sm:flex-row sm:justify-between sm:gap-3'>
+      <div className='vsm:flex-row vsm:justify-between flex flex-col items-center justify-between gap-1 sm:justify-between sm:gap-3'>
         <label htmlFor='number'>مقدار مورد نظر را وارد کنید.</label>
         <input
           type='text'

@@ -5,7 +5,11 @@ export default {
     fontFamily: {
       vazir: ['Vazir'],
     },
-    extend: {},
+    extend: {
+      screens: {
+        vsm: '500px',
+      },
+    },
   },
   plugins: [],
 };
