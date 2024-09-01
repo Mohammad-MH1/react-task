@@ -30,7 +30,7 @@ function FormCard({ onFinalValue }: FormCardProps) {
 
   return (
     <form
-      className='flex flex-col gap-3 py-2 vsm:p-10 sm:text-lg md:gap-6 md:pl-16 md:pr-8 md:text-xl lg:gap-8 lg:p-3 lg:text-2xl'
+      className='flex flex-col gap-3 py-2 vsm:px-10 sm:text-lg md:gap-6 md:pl-16 md:pr-8 md:text-xl lg:gap-8 lg:px-3 lg:text-2xl'
       onSubmit={handleSubmit}
     >
       <div className='flex flex-col items-center justify-center gap-4 vsm:flex-row vsm:justify-between sm:justify-between'>
