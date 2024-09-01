@@ -8,6 +8,7 @@ In this Website, you can calculate your desired amount of money between these tw
 ![DollaRial Website](public/DollaRial.PNG)
 
 ## Getting Started
+⚠️ This project is using Node version : 18.14.2
 to start the project, run :
 ```
 npm i
