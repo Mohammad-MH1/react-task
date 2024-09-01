@@ -16,7 +16,7 @@ function FormCard({ onFinalValue }: FormCardProps) {
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const inputValue = value.replace(',', '.');
-    if (!checkPriceInput(inputValue)) return;
+    if (!checkPriceInput(inputValue) || Number(inputValue) <= 0) return;
 
     if (selected === 'dollar') onFinalValue(Number(inputValue) * EXCHANGE);
     if (selected === 'rial') onFinalValue(Number(inputValue) / EXCHANGE);
