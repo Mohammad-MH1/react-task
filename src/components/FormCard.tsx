@@ -15,21 +15,25 @@ function FormCard({ onFinalValue }: FormCardProps) {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const inputValue = value.replace(',', '.');
-    if (!checkPriceInput(inputValue) || Number(inputValue) <= 0) return;
-
-    if (selected === 'dollar') onFinalValue(Number(inputValue) * EXCHANGE);
-    if (selected === 'rial') onFinalValue(Number(inputValue) / EXCHANGE);
+    if (!value) return;
+    if (selected === 'dollar') onFinalValue(Number(value) * EXCHANGE);
+    if (selected === 'rial') onFinalValue(Number(value) / EXCHANGE);
 
     setValue('');
   }
 
+  function handlePriceInput(inputVal: string) {
+    const isValid = checkPriceInput(inputVal);
+    if (!isValid || inputVal === '0') return setValue(value);
+    setValue(inputVal);
+  }
+
   return (
     <form
-      className='vsm:p-10 flex flex-col gap-3 py-2 sm:text-lg md:gap-6 md:pl-16 md:pr-8 md:text-xl lg:gap-8 lg:p-3 lg:text-2xl'
+      className='flex flex-col gap-3 py-2 vsm:p-10 sm:text-lg md:gap-6 md:pl-16 md:pr-8 md:text-xl lg:gap-8 lg:p-3 lg:text-2xl'
       onSubmit={handleSubmit}
     >
-      <div className='vsm:flex-row vsm:justify-between flex flex-col items-center justify-center gap-4 sm:justify-between'>
+      <div className='flex flex-col items-center justify-center gap-4 vsm:flex-row vsm:justify-between sm:justify-between'>
         <label htmlFor='currency' className=''>
           واحد پول مورد نظر را انتخاب کنید.
         </label>
@@ -43,14 +47,14 @@ function FormCard({ onFinalValue }: FormCardProps) {
           <option value='rial'>ریال</option>
         </select>
       </div>
-      <div className='vsm:flex-row vsm:justify-between flex flex-col items-center justify-between gap-1 sm:justify-between sm:gap-3'>
+      <div className='flex flex-col items-center justify-between gap-1 vsm:flex-row vsm:justify-between sm:justify-between sm:gap-3'>
         <label htmlFor='number'>مقدار مورد نظر را وارد کنید.</label>
         <input
           type='text'
           id='number'
           className='input w-32 md:w-36 lg:w-44 lg:text-lg'
           value={value}
-          onChange={e => setValue(e.target.value)}
+          onChange={e => handlePriceInput(e.target.value)}
         />
       </div>
       <div className='flex justify-center gap-5'>

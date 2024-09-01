@@ -3,6 +3,5 @@ export function numToPersian(num: number) {
 }
 
 export function checkPriceInput(value: string) {
-  const input = value.trim();
-  return /^(\d*([.])?\d+)$/.test(input);
+  return /^[0-9]*\.?[0-9]*$/.test(value);
 }
