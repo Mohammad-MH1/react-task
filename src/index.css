@@ -4,7 +4,7 @@
 
 @layer base {
   .input {
-    @apply rounded-full border border-stone-200 bg-green-100 px-3 py-1 text-sm transition-all duration-300 focus:outline-none focus:ring focus:ring-green-700;
+    @apply rounded-full border border-stone-200 bg-sky-100 px-3 py-1 text-base text-stone-900 transition-all duration-300 focus:outline-none focus:ring focus:ring-sky-700;
   }
 
   @font-face {

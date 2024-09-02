@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <header dir='rtl' className='mb-8 text-center sm:mb-11 md:mb-20'>
+    <header dir='rtl' className='mb-8 text-center vsm:mb-24'>
       <h1 className='mb-4 text-3xl font-bold md:mb-3 md:text-4xl xl:mb-7 xl:text-5xl'>
         به سایت دلاریال خوش اومدی
       </h1>

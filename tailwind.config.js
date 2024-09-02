@@ -9,6 +9,9 @@ export default {
       screens: {
         vsm: '500px',
       },
+      backgroundImage: {
+        'hero-pattern': "url('/hero.jpg')",
+      },
     },
   },
   plugins: [],

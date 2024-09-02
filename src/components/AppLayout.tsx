@@ -7,7 +7,7 @@ type AppLayoutProps = {
 function AppLayout({ children }: AppLayoutProps) {
   return (
     <>
-      <div className='h-dvh px-3 py-5 md:py-12'>{children}</div>
+      <div className='h-dvh px-3 pt-5 vsm:pt-10 md:pt-12'>{children}</div>
     </>
   );
 }

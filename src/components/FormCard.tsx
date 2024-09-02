@@ -58,7 +58,7 @@ function FormCard({ onFinalValue }: FormCardProps) {
         />
       </div>
       <div className='flex justify-center gap-5'>
-        <Button>اجرا</Button>
+        <Button>محاسبه</Button>
       </div>
     </form>
   );
