@@ -5,7 +5,7 @@ In this Website, you can calculate your desired amount of money between these tw
 #### Also you can use this website on smaller screens such as Tablet and Mobile, because its **Fully Responsive** 😊
 
 ## Website Page
-![DollaRial Website](public/DollaRial.PNG)
+![](public/DollaRialGif.gif)
 
 ## Getting Started
 ⚠️ This project is using Node version : 18.14.2 <br>
