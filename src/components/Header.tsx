@@ -6,7 +6,7 @@ function Header() {
       </h1>
       <h2 className='text-sm md:text-base lg:text-lg'>
         شما میتونید با انتخاب بین دو ارز دلار و ریال , مقدار اون یکی رو حساب
-        کنید (یک دلار = ریال ٦٠٠٬٠٠٠)
+        کنید.
       </h2>
     </header>
   );

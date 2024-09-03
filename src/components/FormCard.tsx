@@ -1,31 +1,26 @@
 import { FormEvent, useState } from 'react';
 
-import { checkPriceInput } from '../utils/helpers';
 import Button from './Button';
+import { handlePriceInput } from '../utils/helpers';
 
 type FormCardProps = {
   onFinalValue: (value: number) => void;
+  exchangeValue: string;
 };
 
-const EXCHANGE = 600000;
-
-function FormCard({ onFinalValue }: FormCardProps) {
+function FormCard({ onFinalValue, exchangeValue }: FormCardProps) {
   const [selected, setSelected] = useState('dollar');
   const [value, setValue] = useState('');
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!value) return;
-    if (selected === 'dollar') onFinalValue(Number(value) * EXCHANGE);
-    if (selected === 'rial') onFinalValue(Number(value) / EXCHANGE);
+    if (selected === 'dollar')
+      onFinalValue(Number(value) * Number(exchangeValue));
+    if (selected === 'rial')
+      onFinalValue(Number(value) / Number(exchangeValue));
 
     setValue('');
-  }
-
-  function handlePriceInput(inputVal: string) {
-    const isValid = checkPriceInput(inputVal);
-    if (!isValid || inputVal === '0') return setValue(value);
-    setValue(inputVal);
   }
 
   return (
@@ -54,7 +49,7 @@ function FormCard({ onFinalValue }: FormCardProps) {
           id='number'
           className='input w-32 md:w-36 lg:w-44 lg:text-lg'
           value={value}
-          onChange={e => handlePriceInput(e.target.value)}
+          onChange={e => handlePriceInput(e.target.value, setValue, value)}
         />
       </div>
       <div className='flex justify-center gap-5'>
